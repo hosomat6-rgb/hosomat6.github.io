@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mật Án — Hồ Sơ 1</title>
+<meta name="description" content="Mật Án — Hồ Sơ 1. Một trải nghiệm phá án dành cho những người thích trinh thám, True Crime và giải đố.">
+<style>
+:root{
+  --bg:#0d0b0b; --panel:#151112; --paper:#eee7da; --muted:#bdb4aa;
+  --red:#8e2837; --red2:#bd5361; --line:rgba(238,231,218,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+radial-gradient(circle at 15% 8%,rgba(142,40,55,.18),transparent 30%),
+radial-gradient(circle at 90% 18%,rgba(142,40,55,.10),transparent 28%),var(--bg);
+color:var(--paper);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+.wrap{width:min(1100px,calc(100% - 36px));margin:auto}
+.top{position:sticky;top:0;z-index:10;background:rgba(13,11,11,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:66px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:Georgia,serif;font-weight:700;letter-spacing:.14em}
+.logo span{color:var(--red2)}
+nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-size:14px}
+nav a:hover{color:#fff}
+.hero{min-height:84vh;display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;padding:78px 0}
+.eyebrow{font-size:12px;letter-spacing:.18em;color:#d5cabe;text-transform:uppercase}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--red2);box-shadow:0 0 0 5px rgba(189,83,97,.12);margin-right:8px}
+h1{font:700 clamp(54px,8vw,96px)/.94 Georgia,serif;margin:18px 0}
+h1 span{color:#f5ede1}
+.lead{font-size:20px;color:#ded5ca;max-width:650px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:11px;text-decoration:none;font-weight:700;border:1px solid var(--line)}
+.primary{background:var(--red);border-color:var(--red);color:#fff}
+.secondary{color:var(--paper)}
+.file{background:linear-gradient(150deg,rgba(255,255,255,.05),rgba(255,255,255,.015)),#120f10;border:1px solid var(--line);padding:26px;border-radius:22px;box-shadow:0 25px 70px rgba(0,0,0,.34);transform:rotate(1.2deg)}
+.stamp{display:inline-block;padding:6px 10px;border:2px solid #a03a4a;color:#d36c78;border-radius:5px;font-size:11px;font-weight:800;letter-spacing:.15em;transform:rotate(-6deg)}
+.case{font:700 48px/1.0 Georgia,serif;margin:20px 0 28px}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.meta div{padding:13px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.03)}
+.meta small{display:block;color:#91877e;text-transform:uppercase;letter-spacing:.12em;font-size:10px}
+section{padding:78px 0}
+.kicker{color:var(--red2);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+h2{font:700 44px/1.05 Georgia,serif;margin:10px 0 16px}
+.sub{color:var(--muted);max-width:720px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:30px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}
+.num{font:700 34px Georgia,serif;color:#d26470}
+.card h3{margin:7px 0;font-size:20px}
+.card p{color:var(--muted);margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.paper{background:var(--paper);color:#181313;border-radius:18px;padding:34px;position:relative}
+.paper .tag{position:absolute;right:22px;top:22px;border:2px solid #9f3344;color:#9f3344;padding:4px 9px;border-radius:5px;font-size:10px;font-weight:800;transform:rotate(5deg)}
+.paper h3{font:700 38px/1.05 Georgia,serif;margin:0 0 18px}
+.dark{background:#120f10;border:1px solid var(--line);border-radius:18px;padding:34px}
+.quote{font:700 31px/1.2 Georgia,serif;margin:0 0 22px}
+.step{display:flex;gap:12px;margin:14px 0}
+.badge{width:38px;height:38px;border-radius:10px;background:rgba(142,40,55,.18);border:1px solid rgba(189,83,97,.3);display:grid;place-items:center;color:#dc7b87;font-weight:800;flex:0 0 38px}
+.step b{display:block}
+.step span{display:block;color:var(--muted);font-size:14px}
+.leadbox{background:linear-gradient(145deg,#1a1113,#120e0f);border:1px solid rgba(189,83,97,.35);border-radius:22px;padding:32px;box-shadow:0 24px 70px rgba(0,0,0,.3)}
+.formframe{margin-top:24px;background:#fff;border-radius:14px;padding:6px;overflow:hidden}
+iframe{display:block;width:100%;height:950px;border:0;border-radius:10px;background:#fff}
+.note{font-size:12px;color:#8f867e;margin-top:12px}
+footer{padding:34px 0 60px;color:#7f7770;border-top:1px solid var(--line);font-size:13px}
+@media(max-width:860px){
+.hero,.two,.grid{grid-template-columns:1fr}
+nav{display:none}
+h2{font-size:36px}
+.hero{padding:55px 0}
+.case{font-size:38px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+<div class="wrap nav">
+<div class="logo">MẬT ÁN <span>•</span> HỒ SƠ 1</div>
+<nav><a href="#trai-nghiem">Trải nghiệm</a><a href="#danh-sach">Danh sách điều tra viên</a></nav>
+</div>
+</header>
+
+<main>
+<section class="wrap hero">
+<div>
+<div class="eyebrow"><span class="dot"></span> HỒ SƠ 01 · ĐANG ĐƯỢC ĐIỀU TRA</div>
+<h1>MẬT ÁN<br><span>HỒ SƠ 1</span></h1>
+<p class="lead">Một trải nghiệm phá án dành cho những người thích trinh thám, True Crime và giải đố. Không chỉ xem câu chuyện — <strong>bạn là người điều tra.</strong></p>
+<div class="actions">
+<a class="btn primary" href="#danh-sach">Trở thành điều tra viên</a>
+<a class="btn secondary" href="#trai-nghiem">Xem trải nghiệm</a>
+</div>
+</div>
+<div class="file">
+<div class="stamp">TỐI MẬT</div>
+<div class="case">CASE FILE<br>001</div>
+<div class="meta">
+<div><small>Trạng thái</small><b>Đang điều tra</b></div>
+<div><small>Vai trò</small><b>Điều tra viên</b></div>
+<div><small>Thể loại</small><b>Mystery / Puzzle</b></div>
+<div><small>Hồ sơ</small><b>Mật Án #01</b></div>
+</div>
+</div>
+</section>
+
+<section id="trai-nghiem" class="wrap">
+<div class="kicker">Không chỉ là một trò chơi</div>
+<h2>Bạn không cần biết đáp án.<br>Bạn cần tìm ra nó.</h2>
+<p class="sub">Mật Án được xây quanh cảm giác mở một hồ sơ, đọc dữ kiện, phát hiện mâu thuẫn và tự kết nối mọi thứ thành lời giải.</p>
+<div class="grid">
+<div class="card"><div class="num">01</div><h3>Đọc</h3><p>Tiếp cận hồ sơ, lời khai và những thông tin được cung cấp.</p></div>
+<div class="card"><div class="num">02</div><h3>Quan sát</h3><p>Tìm những chi tiết nhỏ mà người khác có thể bỏ qua.</p></div>
+<div class="card"><div class="num">03</div><h3>Suy luận</h3><p>Kết nối dữ kiện, loại trừ giả thuyết và tìm ra sự thật.</p></div>
+</div>
+</section>
+
+<section class="wrap two">
+<div class="paper">
+<div class="tag">EVIDENCE</div>
+<h3>Một hồ sơ.<br>Một bí ẩn.<br>Một sự thật.</h3>
+<ul>
+<li>Trải nghiệm điều tra theo dạng hồ sơ.</li>
+<li>Phù hợp với người thích mystery, trinh thám và puzzle.</li>
+<li>Có thể khám phá một mình hoặc cùng người khác.</li>
+<li>Tập trung vào cảm giác “đang điều tra”.</li>
+</ul>
+</div>
+<div class="dark">
+<p class="quote">“Bạn nghĩ mình đã biết ai là người đáng nghi nhất?”</p>
+<div class="step"><div class="badge">A</div><div><b>Nhận hồ sơ</b><span>Một vụ án đang chờ được mở.</span></div></div>
+<div class="step"><div class="badge">B</div><div><b>Ghép manh mối</b><span>Mọi chi tiết đều có thể quan trọng.</span></div></div>
+<div class="step"><div class="badge">C</div><div><b>Đưa ra kết luận</b><span>Chỉ một giả thuyết có thể đứng vững.</span></div></div>
+</div>
+</section>
+
+<section class="wrap" id="danh-sach">
+<div class="leadbox">
+<div class="kicker">DANH SÁCH ĐIỀU TRA VIÊN</div>
+<h2>Muốn biết khi Hồ Sơ 1 được mở?</h2>
+<p class="sub">Điền thông tin ngay dưới đây để tham gia danh sách quan tâm của Mật Án. Biểu mẫu Google Forms được hiển thị trực tiếp trên trang.</p>
+<div class="formframe">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfMERj9hpOf-NpkyoZgY9qkFR0-zH058CqPq7z5CSH6XaMeNg/viewform?embedded=true" title="Đăng ký trở thành Điều tra viên – Mật Án Hồ Sơ 1" loading="lazy">Đang tải biểu mẫu…</iframe>
+</div>
+<p class="note">Sau khi khách gửi, câu trả lời sẽ lưu trong Google Forms và Google Sheets nếu Form của bạn đã được liên kết với Sheets.</p>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 MẬT ÁN — HỒ SƠ 1</div></footer>
+</body>
+</html>
